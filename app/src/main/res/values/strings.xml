@@ -3,4 +3,8 @@
     <string name="weather_menu">weather</string>
     <string name="memo_menu">memo</string>
     <string name="cal_menu">calculator</string>
+    <string name="welcome_main">欢迎使用生活助手</string>
+    <string name="slogan_main">让你的生活更有效率</string>
+    <string name="memo_title">备忘录</string>
+    <string name="memo_create">+</string>
 </resources>

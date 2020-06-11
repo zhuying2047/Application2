@@ -12,13 +12,14 @@
     <EditText
         android:id="@+id/et_result"
         android:layout_width="match_parent"
-        android:layout_height="305dp"
+        android:layout_height="294dp"
         android:layout_gravity="left"
         android:gravity="bottom"
         android:textSize="26sp" />
 
     <Button
         android:id="@+id/btn_clear"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -34,83 +35,101 @@
 
         <Button
             android:id="@+id/btn_1"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="1"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_2"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="2"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_3"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="3"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_add"
             android:text="+"
-            android:textSize="30sp" />
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_4"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="4"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_5"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="5"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_6"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="6"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_sub"
             android:text="-"
-            android:textSize="30sp" />
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_7"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="7"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_8"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="8"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_9"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="9"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_mul"
             android:text="×"
-            android:textSize="30sp" />
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_dot"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="."
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_0"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="0"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_equ"
+            style="@style/Widget.AppCompat.Button"
+            android:background="@android:color/holo_blue_dark"
             android:text="="
-            android:textSize="30sp" />
+            android:textColor="@android:color/background_light"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_div"
             android:text="÷"
-            android:textSize="30sp" />
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="25sp" />
     </GridLayout>
 
 </LinearLayout>
