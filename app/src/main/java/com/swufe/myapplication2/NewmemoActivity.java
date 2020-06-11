@@ -62,7 +62,7 @@ public class NewmemoActivity extends AppCompatActivity {
      */
     public void onClick2(View btn){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("").setMessage("是否确认退出当前备忘录的编辑").setPositiveButton("是", new DialogInterface.OnClickListener() {
+        builder.setTitle("").setMessage("是否退出编辑?").setPositiveButton("是", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.i(TAG,"onClick:对话框事件处理");

@@ -2,9 +2,14 @@ package com.swufe.myapplication2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -12,7 +17,7 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MemoMainActivity extends AppCompatActivity {
+public class MemoMainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     private String TAG = "MemoMainActivity";
     ListView memolist;
@@ -24,7 +29,10 @@ public class MemoMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo_main);
 
-        //initListView();
+        initListView();
+        memolist.setOnItemClickListener(this);
+        memolist.setOnItemLongClickListener(this);
+
     }
 
     @Override
@@ -67,6 +75,50 @@ public class MemoMainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NewmemoActivity.class);
         startActivity(intent);
     }
+
+    /*
+    列表单击事件：点击进入编辑页面EditmemoActivity
+     */
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //传输点击了的备忘录数据
+
+    }
+
+    /*
+    列表长按事件：出现提示框，删除与否
+     */
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+
+        Log.i(TAG,"onItemLongClick:长按列表项position="+position);
+
+        //构造对话框进行确认删除操作
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("").setMessage("是否删除选中备忘录?")
+                .setPositiveButton("是", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i(TAG,"onClick:对话框事件处理");
+                        //对列表进行更新
+                        //listItems.remove(position);
+                        //listitemAdapter.notifyDataSetChanged();
+                        HashMap<String,String> map = listItems.get(position);
+                        String content1 = map.get("content");
+                        //对数据库中的数据进行删除
+                        DBManager manager = new DBManager(MemoMainActivity.this);
+                        manager.delete(content1);
+                        initListView();
+                    }
+                })
+                .setNegativeButton("否",null);
+
+        builder.create().show();
+
+        return true;
+
+    }
+
 
 
 }

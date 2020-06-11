@@ -57,6 +57,18 @@ public class DBManager {
     }
 
     /*
+    删除一行数据
+     */
+    public void delete(String s1){
+        //使用数据库对象调用delete()方法。各参数分别表示
+        //参数1：表名
+        //参数2：条件语句
+        //参数3：条件占位符填充
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(TBNAME,"content=?",new String[]{s1});
+    }
+
+    /*
      *显示所有数据
      */
     public List<MemoItem> listAll(){
