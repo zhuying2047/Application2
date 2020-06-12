@@ -2,6 +2,7 @@ package com.swufe.myapplication2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -81,8 +82,21 @@ public class MemoMainActivity extends AppCompatActivity implements AdapterView.O
      */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //传输点击了的备忘录数据
+        //获取点击了的备忘录数据
+        HashMap<String,String> map = listItems.get(position);
+        String contentStr = map.get("content");
+        String dateStr = map.get("date");
 
+        //将数据传送到NewmemoActivity
+        Intent editMemo = new Intent(this,NewmemoActivity.class);
+        editMemo.putExtra("Content",contentStr);
+        editMemo.putExtra("enter_state",1);
+        startActivity(editMemo);
+
+        //删除数据库里和这个内容一样的备忘录
+        //DBManager manager = new DBManager(MemoMainActivity.this);
+        //manager.delete(contentStr);
+        //这样就要求用户无论修改与否都要点击保存
     }
 
     /*

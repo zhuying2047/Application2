@@ -20,6 +20,8 @@ public class NewmemoActivity extends AppCompatActivity {
 
     EditText newContent;
     TextView newTime;
+    String content2;
+    public int enter_state;
     private String TAG = "NewmemoActivity";
 
     @Override
@@ -35,6 +37,11 @@ public class NewmemoActivity extends AppCompatActivity {
         final String timeStr = sdf.format(today);
         newTime.setText(timeStr);
 
+        //获取在主备忘录页面点击的备忘录数据
+        content2= getIntent().getStringExtra("Content");
+        enter_state = getIntent().getIntExtra("enter_state",0);
+        newContent.setText(content2);
+
     }
 
     /*
@@ -44,16 +51,25 @@ public class NewmemoActivity extends AppCompatActivity {
     public void onClick1(View btn){
         String new_content = newContent.getText().toString();
         String new_time = newTime.getText().toString();
-        //如果用户没有输入内容就点击保存，提示用户
-        if(new_content.length()>0){
+        //如果从main获取的备忘录为空时，则新建备忘录，若不为空，修改备忘录
+        if(enter_state==0){
+            //如果用户没有输入内容就点击保存，提示用户
+            if(new_content.length()>0){
+                MemoItem memoItem = new MemoItem(new_content,new_time);
+                DBManager manager = new DBManager(this);
+                manager.add(memoItem);
+                Log.i(TAG,"onClick1: 新备忘录已保存");
+            }else{
+                Toast.makeText(this,"请输入内容",Toast.LENGTH_SHORT).show();
+            }
+        }else{
             MemoItem memoItem = new MemoItem(new_content,new_time);
             DBManager manager = new DBManager(this);
-            manager.add(memoItem);
-            Log.i(TAG,"onClick1: 新备忘录已保存");
-        }else{
-            Toast.makeText(this,"请输入内容",Toast.LENGTH_SHORT).show();
+            manager.update(memoItem,content2);
         }
-
+        //点击保存之后又转回到主备忘录页面
+        Intent intent = new Intent(this,MemoMainActivity.class);
+        startActivity(intent);
     }
 
     /*
@@ -66,6 +82,7 @@ public class NewmemoActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.i(TAG,"onClick:对话框事件处理");
+                //点击是之后转到主备忘录界面
                 Intent intent = new Intent(NewmemoActivity.this, MemoMainActivity.class);
                 startActivity(intent);
             }

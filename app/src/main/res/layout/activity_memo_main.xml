@@ -11,9 +11,10 @@
         android:id="@+id/memo_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
         android:gravity="center"
+        android:paddingTop="10dp"
         android:text="@string/memo_title"
+        android:textColor="#3C2B2B"
         android:textSize="30sp" />
 
     <RelativeLayout

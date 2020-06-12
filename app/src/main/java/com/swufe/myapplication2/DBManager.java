@@ -94,4 +94,16 @@ public class DBManager {
         db.close();
         return memoList;
     }
+
+    /*
+    更新一行数据
+     */
+    public void update(MemoItem item,String con){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("content",item.getContent());
+        values.put("date",item.getDate());
+        db.update(TBNAME,values,"content=?",new String[]{con});
+        db.close();
+    }
 }
