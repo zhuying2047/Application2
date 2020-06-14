@@ -59,6 +59,10 @@ public class NewmemoActivity extends AppCompatActivity {
                 DBManager manager = new DBManager(this);
                 manager.add(memoItem);
                 Log.i(TAG,"onClick1: 新备忘录已保存");
+                finish();
+                //点击保存之后又转回到主备忘录页面
+                //Intent intent = new Intent(this,MemoMainActivity.class);
+                //startActivity(intent);
             }else{
                 Toast.makeText(this,"请输入内容",Toast.LENGTH_SHORT).show();
             }
@@ -66,10 +70,8 @@ public class NewmemoActivity extends AppCompatActivity {
             MemoItem memoItem = new MemoItem(new_content,new_time);
             DBManager manager = new DBManager(this);
             manager.update(memoItem,content2);
+            finish();
         }
-        //点击保存之后又转回到主备忘录页面
-        Intent intent = new Intent(this,MemoMainActivity.class);
-        startActivity(intent);
     }
 
     /*
@@ -82,9 +84,10 @@ public class NewmemoActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.i(TAG,"onClick:对话框事件处理");
+                finish();
                 //点击是之后转到主备忘录界面
-                Intent intent = new Intent(NewmemoActivity.this, MemoMainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(NewmemoActivity.this, MemoMainActivity.class);
+//                startActivity(intent);
             }
         }).setNegativeButton("否",null);
         builder.create().show();

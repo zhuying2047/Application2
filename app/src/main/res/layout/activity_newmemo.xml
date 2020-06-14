@@ -19,7 +19,8 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="时间"
-            android:textSize="20sp" />
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/new_content"
@@ -29,7 +30,7 @@
             android:gravity="start"
             android:hint="输入你想要记录的内容"
             android:inputType="textLongMessage|text"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -49,10 +50,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/black"
+            android:background="@color/colorAccent"
             android:onClick="onClick1"
             android:text="保存"
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/colorText"
             android:textSize="20sp" />
 
         <TextView
@@ -66,10 +67,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/black"
+            android:background="@color/colorAccent"
             android:onClick="onClick2"
             android:text="取消"
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/colorText"
             android:textSize="20sp" />
 
         <TextView

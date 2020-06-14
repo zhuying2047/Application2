@@ -4,21 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@mipmap/background2"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-2dp"
-        android:contentDescription="TODO"
-        android:scaleType="centerCrop"
-        app:srcCompat="@mipmap/background" />
 
     <TextView
         android:id="@+id/welcome"
@@ -27,13 +16,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginBottom="348dp"
-        android:gravity="center"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="355dp"
+        android:foregroundGravity="center"
         android:text="@string/welcome_main"
-        android:textColor="@android:color/black"
-        android:textSize="32sp" />
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="32sp"
+        android:textStyle="normal" />
 
     <TextView
         android:id="@+id/time"
@@ -43,7 +33,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="553dp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="44sp" />
 
     <TextView
@@ -53,25 +43,26 @@
         android:layout_above="@+id/time"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="-80dp"
-        android:textColor="@android:color/black"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginBottom="-99dp"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/slogan"
-        android:layout_width="wrap_content"
+        android:layout_width="199dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        android:layout_marginBottom="159dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="158dp"
         android:foregroundGravity="center"
         android:text="@string/slogan_main"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
 </RelativeLayout>

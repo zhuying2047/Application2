@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeatherMainActivity">
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".WeatherMainActivity" >
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/current_temp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginRight="139dp"
-        android:text="@string/weather_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="当前温度"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/range_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="温度区间"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/life_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="生活小贴士"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp" />
+
+    <ListView
+        android:id="@+id/life_advice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -12,7 +12,7 @@
     <EditText
         android:id="@+id/et_result"
         android:layout_width="match_parent"
-        android:layout_height="294dp"
+        android:layout_height="360dp"
         android:layout_gravity="left"
         android:gravity="bottom"
         android:textSize="26sp" />
@@ -24,11 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="清零"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="26sp" />
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:columnCount="4"
         android:rowCount="4">
@@ -36,6 +37,8 @@
         <Button
             android:id="@+id/btn_1"
             style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_row="0"
+            android:layout_column="0"
             android:text="1"
             android:textSize="25sp" />
 
@@ -53,8 +56,9 @@
 
         <Button
             android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
             android:text="+"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/colorPrimary"
             android:textSize="25sp" />
 
         <Button
@@ -78,7 +82,7 @@
         <Button
             android:id="@+id/btn_sub"
             android:text="-"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/colorPrimary"
             android:textSize="25sp" />
 
         <Button
@@ -102,7 +106,7 @@
         <Button
             android:id="@+id/btn_mul"
             android:text="×"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/colorPrimary"
             android:textSize="25sp" />
 
         <Button
@@ -120,15 +124,15 @@
         <Button
             android:id="@+id/btn_equ"
             style="@style/Widget.AppCompat.Button"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/colorAccent"
             android:text="="
-            android:textColor="@android:color/background_light"
+            android:textColor="@color/colorText"
             android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_div"
             android:text="÷"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/colorPrimary"
             android:textSize="25sp" />
     </GridLayout>
 
