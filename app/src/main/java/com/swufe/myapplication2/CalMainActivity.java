@@ -16,7 +16,7 @@ public class CalMainActivity extends AppCompatActivity implements View.OnClickLi
     Button dot, equ; // 小数点，=号
     Button clear; //清除
     EditText result; // 显示文本
-    boolean clr_flag;
+    boolean clr_flag;  //是否需要清除
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

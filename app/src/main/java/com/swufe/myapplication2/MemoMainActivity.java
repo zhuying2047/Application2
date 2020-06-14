@@ -34,7 +34,6 @@ public class MemoMainActivity extends AppCompatActivity implements AdapterView.O
         initListView();
         memolist.setOnItemClickListener(this);
         memolist.setOnItemLongClickListener(this);
-
     }
 
     @Override

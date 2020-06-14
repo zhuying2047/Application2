@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="10dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="10dp">
+    android:padding="10dp">
 
     <EditText
         android:id="@+id/et_result"
@@ -15,7 +12,7 @@
         android:layout_height="360dp"
         android:layout_gravity="left"
         android:gravity="bottom"
-        android:textSize="26sp" />
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/btn_clear"
@@ -28,8 +25,8 @@
         android:textSize="26sp" />
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:columnCount="4"
         android:rowCount="4">
@@ -37,8 +34,6 @@
         <Button
             android:id="@+id/btn_1"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_row="0"
-            android:layout_column="0"
             android:text="1"
             android:textSize="25sp" />
 
