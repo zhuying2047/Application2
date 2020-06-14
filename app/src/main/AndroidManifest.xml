@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.swufe.myapplication2">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon"
@@ -11,11 +13,22 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".NewmemoActivity" />
-        <activity android:name=".CalMainActivity" />
-        <activity android:name=".MemoMainActivity" />
-        <activity android:name=".WeatherMainActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".NewmemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CalMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MemoMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WeatherMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,8 @@
 package com.swufe.myapplication2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
