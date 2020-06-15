@@ -123,6 +123,7 @@ public class MemoMainActivity extends AppCompatActivity implements AdapterView.O
                         DBManager manager = new DBManager(MemoMainActivity.this);
                         manager.delete(content1);
                         initListView();
+
                     }
                 })
                 .setNegativeButton("否",null);
