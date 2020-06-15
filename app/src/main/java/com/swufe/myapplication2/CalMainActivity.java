@@ -176,7 +176,7 @@ public class CalMainActivity extends AppCompatActivity implements View.OnClickLi
             }else{
                 result.setText(cnt + "");
             }
-        }else if(!s1.equals("")&&s2.equals("")){
+        }else if(!s1.equals("")&&s2.equals("")){   //s1不为空，s2为空
             double n1 = Double.parseDouble(s1);
             cnt = n1;
             if(!s2.contains(".")){

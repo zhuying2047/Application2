@@ -58,7 +58,7 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable{
                     Log.i(TAG,"handleMessage:range:"+range);
                     currentTemp.setText(temp);
                     tempRange.setText(range);
-                    //将listItems和列表连接起来
+                    //将listItems和列表布局连接起来
                     listitemAdapter = new SimpleAdapter(WeatherMainActivity.this,listItems,R.layout.temp_item,
                             new String[]{"title","content"},new int[]{R.id.advice_title,R.id.advice_content});
 

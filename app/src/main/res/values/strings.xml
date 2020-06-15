@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application2</string>
+    <string name="app_name">生活助手</string>
     <string name="weather_menu">weather</string>
     <string name="memo_menu">memo</string>
     <string name="cal_menu">calculator</string>

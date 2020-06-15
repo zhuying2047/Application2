@@ -61,9 +61,6 @@ public class NewmemoActivity extends AppCompatActivity {
                 manager.add(memoItem);
                 Log.i(TAG,"onClick1: 新备忘录已保存");
                 finish();
-                //点击保存之后又转回到主备忘录页面
-                //Intent intent = new Intent(this,MemoMainActivity.class);
-                //startActivity(intent);
             }else{
                 Toast.makeText(this,"请输入内容",Toast.LENGTH_SHORT).show();
             }
