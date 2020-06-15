@@ -124,6 +124,7 @@ public class MemoMainActivity extends AppCompatActivity implements AdapterView.O
                         manager.delete(content1);
                         initListView();
 
+
                     }
                 })
                 .setNegativeButton("否",null);
