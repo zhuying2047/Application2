@@ -3,10 +3,16 @@ package com.swufe.myapplication2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -22,7 +28,7 @@ import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class WeatherMainActivity extends AppCompatActivity implements Runnable{
+public class WeatherMainActivity extends AppCompatActivity implements Runnable, AdapterView.OnItemClickListener {
 
     TextView currentTemp;
     TextView tempRange;
@@ -67,6 +73,8 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable{
                 super.handleMessage(msg);
             }
         };
+
+        lifeAdvice.setOnItemClickListener(this);
     }
 
     @Override
@@ -96,6 +104,7 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable{
             Element element3 = tips.get(0);
             Elements shortTips = element3.getElementsByClass("m-tips");
             Elements longTips = element3.getElementsByClass("advance");
+
             //0-9是需要的建议
             listItems = new ArrayList<HashMap<String, String>>();
             for(int i=0;i<10;i++){
@@ -116,6 +125,26 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable{
         //将需要返回到主线程的数据放到msg.obj中带到主线程
         msg.obj = bundle;
         handler.sendMessage(msg);
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("").setMessage("是否了解更多?")
+                .setPositiveButton("是", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String url = "http://tianqi.2345.com/chengdu1d/56294.htm";
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(url));
+                        WeatherMainActivity.this.startActivity(intent);
+                    }
+                })
+                .setNegativeButton("否",null);
+
+        builder.create().show();
 
     }
 }

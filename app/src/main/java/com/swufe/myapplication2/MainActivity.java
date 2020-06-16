@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.weather){
-            Intent intent = new Intent(this,WeatherMainActivity.class);
+            Intent intent = new Intent(this,WeatherMain2Activity.class);
             startActivity(intent);
         }else if(item.getItemId()==R.id.memo){
             Intent intent = new Intent(this,MemoMainActivity.class);
