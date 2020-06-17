@@ -12,32 +12,48 @@
         android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="当前温度"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="36sp" />
+        android:text="日期"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/temp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:text="温度区间"
-        android:textColor="@color/colorSecondaryText"
-        android:textSize="18sp" />
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="24小时天气"
+
+        android:text="未来7天天气"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp" />
+        android:textSize="26sp" />
 
     <ListView
-        android:id="@+id/weather_24"
+        android:id="@+id/weather_7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="20dp"/>
+
+    <Button
+        android:id="@+id/weather_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openNew"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="35dp"
+        android:text="查看生活小贴士"
+        android:textColor="@color/colorText"
+        android:textSize="24sp" />
 
 </LinearLayout>

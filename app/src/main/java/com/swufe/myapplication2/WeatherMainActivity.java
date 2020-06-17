@@ -33,6 +33,7 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable, 
     TextView currentTemp;
     TextView tempRange;
     ListView lifeAdvice;
+    String url;
     private SimpleAdapter listitemAdapter;
     private ArrayList<HashMap<String,String>> listItems ;
     Handler handler;
@@ -46,6 +47,8 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable, 
         currentTemp = findViewById(R.id.current_temp);
         tempRange = findViewById(R.id.range_temp);
         lifeAdvice = findViewById(R.id.life_advice);
+
+        url = getIntent().getStringExtra("nextPage");
 
         //开启子线程
         Thread t  = new Thread(this);
@@ -82,7 +85,7 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable, 
         Bundle bundle = new Bundle();
         Document doc = null;
         try {
-            doc = (Document) Jsoup.connect("http://tianqi.2345.com/chengdu1d/56294.htm").get();
+            doc = (Document) Jsoup.connect(url).get();
             Log.i(TAG,"run:"+doc.title());
 
             Elements nowtemp = doc.getElementsByClass("real-mess");
@@ -136,7 +139,7 @@ public class WeatherMainActivity extends AppCompatActivity implements Runnable, 
                 .setPositiveButton("是", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String url = "http://tianqi.2345.com/chengdu1d/56294.htm";
+                        String url = "http://tianqi.2345.com/";
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setData(Uri.parse(url));
                         WeatherMainActivity.this.startActivity(intent);
